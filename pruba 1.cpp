@@ -10,24 +10,24 @@ void clearScreen() {
 }
 
 void waitForKey() {
-	cout << "\nNacisnij dowolny klawisz, aby wrocic do menu...";
+	cout << "\nNaciœnij dowolny klawisz, aby wróciæ do menu...";
 	_getch();
 }
 
 void startGame() {
 	clearScreen();
-	cout << "Rozpoczynam gre PONG...\n";
-	cout << "(Tutaj mozesz dodac implementacje gry)\n";
+	cout << "Rozpoczynam grê PONG...\n";
+	cout << "(Tutaj mo¿esz dodaæ implementacjê gry)\n";
 	waitForKey();
 }
 
 void howToPlay() {
 	clearScreen();
-	cout << "Jak grac?\n\n";
-	cout << "- Sterowanie dla lewego gracza: W (gora), S (dol)\n";
-	cout << "- Sterowanie dla prawego gracza: Strzalka gora, Strzalka dol\n";
-	cout << "- Celem jest odbic pilke tak, aby przeciwnik jej nie zlapal.\n";
-	cout << "- Gra toczy sie do ustalonej liczby punktow.\n";
+	cout << "Jak graæ?\n\n";
+	cout << "- Sterowanie dla lewego gracza: W (góra), S (dó³)\n";
+	cout << "- Sterowanie dla prawego gracza: Strza³ka góra, Strza³ka dó³\n";
+	cout << "- Celem jest odbiæ pi³kê tak, aby przeciwnik jej nie z³apa³.\n";
+	cout << "- Gra toczy siê do ustalonej liczby punktów.\n";
 	waitForKey();
 }
 
@@ -36,7 +36,7 @@ void about() {
 	cout << "Informacje o autorze:\n\n";
 	cout << "Antoni Pietraszak\n";
 	cout << "Klasa: 1a\n";
-	cout << "Ucze sie programowac.\n";
+	cout << "Uczê siê programowaæ.\n";
 	waitForKey();
 }
 
@@ -45,11 +45,11 @@ int main() {
 	do {
 		clearScreen();
 		cout << "------ PONG - MENU ------\n";
-		cout << "1. Zacznij grÄ™\n";
-		cout << "2. Jak graÄ‡?\n";
+		cout << "1. Zacznij grê\n";
+		cout << "2. Jak graæ?\n";
 		cout << "3. Informacje o autorze\n";
-		cout << "4. WyjdÅº z gry\n\n";
-		cout << "Wybierz opcje (1-4): ";
+		cout << "4. WyjdŸ z gry\n\n";
+		cout << "Wybierz opcjê (1-4): ";
 
 		choice = _getch();
 		cout << choice << "\n";
@@ -60,7 +60,7 @@ int main() {
 			case '3': about(); break;
 			case '4': clearScreen(); cout << "Do widzenia!\n"; Sleep(700); break;
 			default:
-				cout << "Nieprawidlowy wybor. Sprobuj ponownie...\n";
+				cout << "Nieprawid³owy wybór. Spróbuj ponownie...\n";
 				Sleep(700);
 		}
 	} while (choice != '4');
