@@ -5,6 +5,11 @@
 
 using namespace std;
 
+const int WIDTH = 40;
+const int HEIGHT = 20;
+const int PADDLE_SIZE = 4;
+const int WIN_SCORE = 5;
+
 void clearScreen() {
 	system("cls");
 }
@@ -12,6 +17,32 @@ void clearScreen() {
 void waitForKey() {
 	cout << "\nNacisnij dowolny klawisz, aby wrocic do menu...";
 	_getch();
+}
+
+void drawBoard(int ballX, int ballY, int leftY, int rightY, int scoreLeft, int scoreRight) {
+    clearScreen();
+    cout << "PONG - Lewy: " << scoreLeft << "  Prawy: " << scoreRight << "\n";
+    for (int y = 0; y <= HEIGHT; y++) {
+        for (int x = 0; x <= WIDTH; x++) {
+            if (y == 0 || y == HEIGHT) {
+                cout << "#";
+            } else if (x == 0 || x == WIDTH) {
+                cout << "#";
+            } else if (x == 2 && y >= leftY && y < leftY + PADDLE_SIZE) {
+                cout << "|";
+            } else if (x == WIDTH - 2 && y >= rightY && y < rightY + PADDLE_SIZE) {
+                cout << "|";
+            } else if (x == ballX && y == ballY) {
+                cout << "O";
+            } else if (x == WIDTH / 2) {
+                cout << ".";
+            } else {
+                cout << " ";
+            }
+        }
+        cout << "\n";
+    }
+    cout << "Sterowanie: W/S dla lewego, strzalki dla prawego. ESC = wyjdz.\n";
 }
 
 void startGame() {
@@ -45,10 +76,10 @@ int main() {
 	do {
 		clearScreen();
 		cout << "------ PONG - MENU ------\n";
-		cout << "1. Zacznij grę\n";
-		cout << "2. Jak grać?\n";
+		cout << "1. Zacznij gre\n";
+		cout << "2. Jak grac?\n";
 		cout << "3. Informacje o autorze\n";
-		cout << "4. Wyjdź z gry\n\n";
+		cout << "4. Wyjdz z gry\n\n";
 		cout << "Wybierz opcje (1-4): ";
 
 		choice = _getch();

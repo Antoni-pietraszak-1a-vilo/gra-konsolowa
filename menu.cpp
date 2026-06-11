@@ -23,8 +23,8 @@ void startGame() {
 
 void howToPlay() {
 	clearScreen();
-	cout << "Jak grac?\n\n";
-	cout << "- Sterowanie dla lewego gracza: W (gora), S (dol)\n";
+	cout << "Jak grac?\n";
+	cout << "- Sterowanie dla lewego gracza: a (lewo), d (prawo)\n";
 	cout << "- Sterowanie dla prawego gracza: Strzalka gora, Strzalka dol\n";
 	cout << "- Celem jest odbic pilke tak, aby przeciwnik jej nie zlapal.\n";
 	cout << "- Gra toczy sie do ustalonej liczby punktow.\n";
@@ -33,7 +33,7 @@ void howToPlay() {
 
 void about() {
 	clearScreen();
-	cout << "Informacje o autorze:\n\n";
+	cout << "Informacje o autorze:\n";
 	cout << "Antoni Pietraszak\n";
 	cout << "Klasa: 1a\n";
 	cout << "Ucze sie programowac.\n";
@@ -45,10 +45,10 @@ int main() {
 	do {
 		clearScreen();
 		cout << "------ PONG - MENU ------\n";
-		cout << "1. Zacznij grę\n";
-		cout << "2. Jak grać?\n";
+		cout << "1. Zacznij gre\n";
+		cout << "2. Jak grac?\n";
 		cout << "3. Informacje o autorze\n";
-		cout << "4. Wyjdź z gry\n\n";
+		cout << "4. Wyjdz z gry\n\n";
 		cout << "Wybierz opcje (1-4): ";
 
 		choice = _getch();
